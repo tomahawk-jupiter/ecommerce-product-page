@@ -14,75 +14,89 @@ export default function Home() {
         />
 
         <div className={styles.smallImagesRow}>
-          <Image
-            src="/images/image-product-1-thumbnail.jpg"
-            alt="product image"
-            width={100}
-            height={100}
-            className={styles.productImage}
-          />
-
-          <Image
-            src="/images/image-product-2-thumbnail.jpg"
-            alt="product image"
-            width={100}
-            height={100}
-            className={styles.productImage}
-          />
-          <Image
-            src="/images/image-product-3-thumbnail.jpg"
-            alt="product image"
-            width={100}
-            height={100}
-            className={styles.productImage}
-          />
-          <Image
-            src="/images/image-product-4-thumbnail.jpg"
-            alt="product image"
-            width={100}
-            height={100}
-            className={styles.productImage}
-          />
+          <div
+            className={`${styles.imageContainer} ${styles.activeImageContainer}`}
+          >
+            <Image
+              src="/images/image-product-1-thumbnail.jpg"
+              alt="product image"
+              width={100}
+              height={100}
+              className={`${styles.productImage} ${styles.activeImage}`}
+            />
+          </div>
+          <div className={styles.imageContainer}>
+            <Image
+              src="/images/image-product-2-thumbnail.jpg"
+              alt="product image"
+              width={100}
+              height={100}
+              className={styles.productImage}
+            />
+          </div>
+          <div className={styles.imageContainer}>
+            <Image
+              src="/images/image-product-3-thumbnail.jpg"
+              alt="product image"
+              width={100}
+              height={100}
+              className={styles.productImage}
+            />
+          </div>
+          <div className={styles.imageContainer}>
+            <Image
+              src="/images/image-product-4-thumbnail.jpg"
+              alt="product image"
+              width={100}
+              height={100}
+              className={styles.productImage}
+            />
+          </div>
         </div>
       </div>
+
       <div className={styles.pageColumn}>
-        <p>SNEAKER COMPANY</p>
-        <h1>Fall Limited Edition Sneakers</h1>
-        <p>
-          These low-profile sneakers are your perfect casual wear companion.
-          Featuring a durable rubber outer sole, they'll withstand everything
-          the weather can offer.
-        </p>
-        <h2>$125.00</h2>
-        <div>50%</div>
-        <div>$250.00</div>
-        <div>
-          <button>
-            <Image
-              src="/images/icon-minus.svg"
-              alt="minus icon"
-              width={100}
-              height={100}
-            />
-          </button>
-          <div>0</div>
-          <button>
-            <Image
-              src="/images/icon-plus.svg"
-              alt="plus icon"
-              width={100}
-              height={100}
-            />
-          </button>
-          <button>
-            <Image
-              src="/images/icon-cart.svg"
-              alt="shopping cart"
-              width={24}
-              height={24}
-            />
-            Add to cart
-          </button>
+        <div className={styles.productDetailsContainer}>
+          <p>SNEAKER COMPANY</p>
+          <h1>Fall Limited Edition Sneakers</h1>
+          <p>
+            These low-profile sneakers are your perfect casual wear companion.
+            Featuring a durable rubber outer sole, they'll withstand everything
+            the weather can offer.
+          </p>
+          <h2>$125.00</h2>
+          <div>50%</div>
+          <div>$250.00</div>
+          <div className={styles.buttonContainer}>
+            <div className={styles.quantityButtonRow}>
+              <button className={styles.quantityThird}>
+                <Image
+                  src="/images/icon-minus.svg"
+                  alt="minus icon"
+                  width={16}
+                  height={6}
+                />
+              </button>
+              <div className={styles.quantityThird}>0</div>
+              <button className={styles.quantityThird}>
+                <Image
+                  src="/images/icon-plus.svg"
+                  alt="plus icon"
+                  width={16}
+                  height={16}
+                />
+              </button>
+            </div>
+            <button className={styles.addToCartButton}>
+              <Image
+                src="/images/icon-cart-light.svg"
+                alt="shopping cart"
+                width={16}
+                height={16}
+              />
+              Add to cart
+            </button>
+          </div>
         </div>
       </div>
     </main>

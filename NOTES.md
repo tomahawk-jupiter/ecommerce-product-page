@@ -27,4 +27,42 @@ export default function RootLayout({ children }) {
 
 ## Responsive navbar
 
-[Responsive navbar with hamburger example article](https://dev.to/devggaurav/let-s-build-a-responsive-navbar-and-hamburger-menu-using-html-css-and-javascript-4gci)
+This took a little while to figure out.
+
+## Change opacity of an image without effecting the border color
+
+ChatGPT solution:
+
+```html
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      /* Set initial styles for the image */
+      .image-container {
+        position: relative;
+        display: inline-block;
+      }
+
+      .image-container img {
+        max-width: 100%;
+        height: auto;
+        transition: opacity 0.3s ease-in-out; /* Add a smooth transition for opacity change */
+      }
+
+      .image-container:hover img {
+        opacity: 0.7; /* Change the opacity on hover */
+      }
+
+      .image-container:hover {
+        border: 2px solid #ff0000; /* Add a border on hover */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="image-container">
+      <img src="your-image.jpg" alt="Your Image" />
+    </div>
+  </body>
+</html>
+```
