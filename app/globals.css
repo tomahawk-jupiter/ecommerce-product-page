@@ -3,15 +3,16 @@
   --pale-orange: hsl(25, 100%, 94%);
   --dark-blue: hsl(220, 13%, 13%);
   --dark-gray-blue: hsl(219, 9%, 45%);
-  --gray-blue: hsl(220, 14%, 75%);
+  --gray-blue: hsl(220, 9%, 68%);
   --light-gray-blue: hsl(223, 64%, 98%);
   --white: hsl(0, 0%, 100%);
   --black: hsl(0, 0%, 0%);
   /* Black (with 75% opacity for lightbox background): hsl(0, 0%, 0%) */
-  font-size: 16px;
+  --font-size: 16px;
   --margin-gap: 40px;
   --margin-gap-small: 16px;
   --navbar-padding: 48px;
+  --border-radius: 12px;
 }
 
 * {
@@ -32,5 +33,26 @@ button {
   padding: 1rem;
 }
 button:hover {
-  opacity: 0.5;
+  opacity: 0.7;
+}
+
+h1,
+h2 {
+  color: var(--dark-blue);
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin: 1rem 0 2rem;
+}
+h2 {
+  font-size: 1.8rem;
+}
+
+p {
+  color: var(--gray-blue);
+  line-height: 1.5;
+  font-size: var(--font-size);
+  font-weight: 700;
+  padding-bottom: 2rem;
 }

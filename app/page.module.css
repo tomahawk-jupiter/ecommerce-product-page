@@ -14,7 +14,7 @@
 /****** Image area ******/
 
 .imageContainer {
-  border-radius: 14px;
+  border-radius: calc(var(--border-radius) + 2px);
 }
 .activeImageContainer {
   border: 2px solid var(--orange);
@@ -23,7 +23,7 @@
 .productImage {
   width: 100%;
   height: auto;
-  border-radius: 12px;
+  border-radius: var(--border-radius);
 }
 .activeImage {
   opacity: 0.5;
@@ -38,23 +38,44 @@
 
 .smallImagesRow img {
   height: 100%;
+  cursor: pointer;
 }
 
 /****** product details area ******/
 
-.productDetailsContainer {
-  border: solid;
+.orangeText {
+  color: var(--orange);
+  font-weight: 700;
+}
+.currentPriceContainer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.savingsBadge {
+  background-color: var(--pale-orange);
+  display: inline-block;
+  border-radius: 8px;
+  padding: 0.25rem 0.5rem;
+}
+.strikeThrough {
+  text-decoration: line-through;
+  color: var(--gray-blue);
+  font-weight: 700;
 }
 
 .buttonContainer {
   display: flex;
   gap: 1.5rem;
+  font-weight: 700;
+  margin-top: 2rem;
 }
 .quantityButtonRow {
   display: flex;
   flex: 2;
   border: solid var(--light-gray-blue);
-  border-radius: 12px;
+  border-radius: var(--border-radius);
+  color: var(--dark-blue);
 }
 .quantityThird {
   flex: 1;
@@ -70,9 +91,8 @@
   justify-content: center;
   gap: 1rem;
   color: var(--white);
-  font-weight: 700;
   background-color: var(--orange);
-  border-radius: 12px;
+  border-radius: var(--border-radius);
 }
 
 @media (max-width: 880px) {
@@ -81,5 +101,14 @@
   }
   .buttonContainer {
     flex-direction: column;
+  }
+  .smallImagesRow {
+    display: none;
+  }
+  .pageColumn {
+    padding: 0;
+  }
+  .productImage {
+    border-radius: 0;
   }
 }
