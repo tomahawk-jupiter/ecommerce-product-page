@@ -45,4 +45,8 @@ Add `"use client";` to the top of the component to make `useState` work. Compone
 
 ## Problems
 
-OnClicks only work when double clicked. While in responsive design view in dev tools the onClick works how it should. Why!?
+- OnClicks only work when double clicked. While in responsive design view in dev tools the onClick works how it should. Why!?
+
+- :hover styles not working!?
+
+SOLUTION: these problems might be related? I deleted the `.next` folder, stopped dev server, closed browswer window and restarted laptop. It was working when I started the dev server back up.

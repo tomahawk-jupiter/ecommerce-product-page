@@ -1,6 +1,5 @@
 import "./globals.css";
 import { Kumbh_Sans } from "next/font/google";
-import Navbar from "./components/navbar";
 import styles from "./layout.module.css";
 
 const kumbhSans = Kumbh_Sans({ subsets: ["latin"] });
@@ -16,7 +15,6 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body className={kumbhSans.className}>
         <div className={styles.appContainer}>
-          <Navbar />
           <div>{children}</div>
         </div>
       </body>
