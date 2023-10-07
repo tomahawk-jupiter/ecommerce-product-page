@@ -56,6 +56,9 @@
 }
 
 @media (max-width: 880px) {
+  .navbar {
+    padding-bottom: 1rem;
+  }
   .navLinksContainer {
     display: none;
   }

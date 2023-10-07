@@ -42,3 +42,25 @@
   background-color: var(--orange);
   border-radius: var(--border-radius);
 }
+
+@media (max-width: 450px) {
+  .cartContainer {
+    position: fixed;
+    top: 88px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 95%;
+  }
+}
+
+@media (max-width: 400px) {
+  .cartContainer {
+    top: 65px;
+  }
+}
+
+@media (max-width: 390px) {
+  .cartContainer {
+    font-size: 14px;
+  }
+}

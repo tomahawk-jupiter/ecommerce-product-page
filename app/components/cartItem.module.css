@@ -29,3 +29,9 @@
 .trashIcon {
   cursor: pointer;
 }
+
+@media (max-width: 400px) and (min-width: 360px) {
+  .productDetailsContainer {
+    margin-left: -2rem;
+  }
+}

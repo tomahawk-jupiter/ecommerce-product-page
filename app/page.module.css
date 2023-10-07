@@ -99,6 +99,15 @@
   .pageContainer {
     display: block;
   }
+  .productDetailsSection {
+    padding: 1rem;
+    margin-bottom: 3rem;
+  }
+  .priceRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
   .buttonContainer {
     flex-direction: column;
   }
@@ -110,5 +119,21 @@
   }
   .productImage {
     border-radius: 0;
+  }
+}
+
+@media (max-width: 450px) {
+  .productImage {
+    object-fit: cover;
+    max-height: 300px;
+  }
+}
+
+@media (max-width: 390px) {
+  .productDetailsSection h1 {
+    font-size: 2rem;
+  }
+  .productDetailsSection p {
+    font-size: 1rem;
   }
 }

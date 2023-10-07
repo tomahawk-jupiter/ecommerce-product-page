@@ -56,7 +56,7 @@ export default function Home() {
       </div>
 
       <div className={styles.pageColumn}>
-        <div>
+        <div className={styles.productDetailsSection}>
           <div className={styles.orangeText}>SNEAKER COMPANY</div>
           <h1>Fall Limited Edition Sneakers</h1>
           <p>
@@ -64,13 +64,15 @@ export default function Home() {
             Featuring a durable rubber outer sole, they'll withstand everything
             the weather can offer.
           </p>
-          <div className={styles.currentPriceContainer}>
-            <h2>$125.00</h2>
-            <div className={`${styles.orangeText} ${styles.savingsBadge}`}>
-              50%
+          <div className={styles.priceRow}>
+            <div className={styles.currentPriceContainer}>
+              <h2>$125.00</h2>
+              <div className={`${styles.orangeText} ${styles.savingsBadge}`}>
+                50%
+              </div>
             </div>
+            <div className={styles.strikeThrough}>$250.00</div>
           </div>
-          <div className={styles.strikeThrough}>$250.00</div>
           <div className={styles.buttonContainer}>
             <div className={styles.quantityButtonRow}>
               <button className={styles.quantityThird}>
