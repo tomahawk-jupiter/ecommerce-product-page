@@ -3,14 +3,19 @@ import Image from "next/image";
 import styles from "./navbar.module.css";
 import { useState } from "react";
 import Menu from "./menu";
+import Cart from "./cart";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [cartOpen, setCartOpen] = useState(false);
 
   return (
     <>
       <nav className={styles.navbar}>
         {menuOpen && <Menu setMenuOpen={setMenuOpen} />}
+
+        {cartOpen && <Cart />}
+
         <div className={styles.navbarLeft}>
           <Image
             src="/images/icon-menu.svg"
@@ -55,7 +60,9 @@ const Navbar = () => {
             width={24}
             height={24}
             className={styles.cartIcon}
+            onClick={() => setCartOpen(!cartOpen)}
           />
+
           <Image
             src="/images/image-avatar.png"
             alt="avatar pic"

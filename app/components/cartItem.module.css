@@ -1,0 +1,31 @@
+.cartItemContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.cartItemImage {
+  border-radius: 4px;
+}
+
+.productDetailsContainer {
+  color: var(--dark-gray-blue);
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.priceDetails {
+  margin-right: 1rem;
+}
+
+.priceTotal {
+  font-weight: 700;
+  color: var(--dark-blue);
+}
+
+.trashIcon {
+  cursor: pointer;
+}

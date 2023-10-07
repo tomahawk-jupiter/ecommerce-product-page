@@ -4,8 +4,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  /* box-shadow: 0px 15px 10px -15px #111; */
-  border-bottom: 1px solid var(--gray-blue);
   border-bottom: 2px solid #0000001a;
 }
 
@@ -46,6 +44,15 @@
 
 .cartIcon {
   cursor: pointer;
+}
+.avatar {
+  cursor: pointer;
+}
+
+/* TODO: image hover not working */
+.avatar:hover {
+  border: solid 2px var(--orange);
+  border-radius: 50%;
 }
 
 @media (max-width: 880px) {

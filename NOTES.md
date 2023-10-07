@@ -2,11 +2,19 @@
 
 I think I'll use NextJS. I'm using the newer App router instead of the Pages router.
 
+Components:
+
+- Responsive layout
+- Navbar collapses into hamburger that toggles menu overlay
+- Shopping cart popover
+- Lightbox gallery (ie. image carousel)
+
 ## Contents
 
 - [Google fonts with nextjs](#google-fonts-with-nextjs)
 - [Change opacity without effecting the border color](#change-opacity-without-effecting-the-border-color)
 - [Client component](#client-component)
+- []()
 
 ## Google fonts with nextjs
 
@@ -34,3 +42,7 @@ You have to put the image in a div and put the border on that div. If using bord
 ## Client component
 
 Add `"use client";` to the top of the component to make `useState` work. Components are server components by default and so are sent as pure html (ie. without javascript). [Stackoverflow answer](https://stackoverflow.com/a/74965850).
+
+## Problems
+
+OnClicks only work when double clicked. While in responsive design view in dev tools the onClick works how it should. Why!?
