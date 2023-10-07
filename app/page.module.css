@@ -183,6 +183,7 @@
   }
   .productImage {
     border-radius: 0;
+    cursor: default;
   }
 }
 

@@ -33,6 +33,13 @@ const ImageArea = ({
   handleNextImageNumber,
   setShowCarousel,
 }) => {
+  const handleShowCarousel = () => {
+    if (window.innerWidth > 880) {
+      setShowCarousel(true);
+    }
+    return;
+  };
+
   return (
     <>
       <Image
@@ -41,9 +48,7 @@ const ImageArea = ({
         width={500}
         height={500}
         className={styles.productImage}
-        onClick={() => {
-          setShowCarousel(true);
-        }}
+        onClick={handleShowCarousel}
       />
 
       <div className={styles.imageControlFabContainer}>
