@@ -18,6 +18,7 @@ const Navbar = ({ productCount, removeItemFromCart }) => {
           <Cart
             productCount={productCount}
             removeItemFromCart={removeItemFromCart}
+            setCartOpen={setCartOpen}
           />
         )}
 

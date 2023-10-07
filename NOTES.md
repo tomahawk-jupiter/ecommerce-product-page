@@ -15,6 +15,7 @@ Components:
 - [Change opacity without effecting the border color](#change-opacity-without-effecting-the-border-color)
 - [Client component](#client-component)
 - [Change color of SVG](#change-color-of-svg)
+- [Click outside cart to close](#click-outside-cart-to-close)
 - [Problems](#problems)
 
 ## Google fonts with nextjs
@@ -48,10 +49,6 @@ Add `"use client";` to the top of the component to make `useState` work. Compone
 
 I couldn't seem to change the color using CSS so I changed the SVG file directly. This means copying the file to have multiple colors.
 
-## Problems
+## Click outside cart to close
 
-- OnClicks only work when double clicked. While in responsive design view in dev tools the onClick works how it should. Why!?
-
-- :hover styles not working!?
-
-SOLUTION: these problems might be related? I deleted the `.next` folder, stopped dev server, closed browswer window and restarted laptop. It was working when I started the dev server back up.
+See the `cart.jsx` component for an example of click outside to close. Got the code from chatGPT.

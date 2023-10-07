@@ -1,10 +1,28 @@
 import styles from "./cart.module.css";
-import { useState } from "react";
+import { useRef, useEffect } from "react";
 import CartItem from "./cartItem";
 
-const Cart = ({ productCount, removeItemFromCart }) => {
+const Cart = ({ productCount, removeItemFromCart, setCartOpen }) => {
+  const elementRef = useRef(null);
+
+  // useEffect to add event listener when the component mounts
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (elementRef.current && !elementRef.current.contains(event.target)) {
+        setCartOpen(false);
+      }
+    }
+
+    // Attach the event listener
+    document.addEventListener("click", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("click", handleClickOutside);
+    };
+  }, []);
+
   return (
-    <div className={styles.cartContainer}>
+    <div ref={elementRef} className={styles.cartContainer}>
       <div className={styles.cartHeader}>
         <div>Cart</div>
       </div>
