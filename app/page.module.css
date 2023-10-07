@@ -99,6 +99,10 @@
   margin-top: 2rem;
 }
 
+.smallImagesRow .productImage {
+  height: 100%;
+}
+
 .smallImagesRow img {
   /* height: 100%; */
   /* width: auto; */
