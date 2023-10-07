@@ -56,8 +56,3 @@ See the `cart.jsx` component for an example of click outside to close. Got the c
 ## Becoming a mess!
 
 The way I've implemented the image carousel is becoming quite a mess. It could do with refactoring!
-
-## Issues
-
-- Clicking main image when in mobile view shouldn't bring up the carousel.
-- Clicking the trash icon in cart closes the cart. It should just remove product and leave the cart open.

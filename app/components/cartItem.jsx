@@ -27,6 +27,7 @@ const CartItem = ({ productCount, removeItemFromCart }) => {
         height={16}
         className={styles.trashIcon}
         onClick={removeItemFromCart}
+        id="trashIcon"
       />
     </div>
   );

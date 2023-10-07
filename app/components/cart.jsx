@@ -4,10 +4,14 @@ import CartItem from "./cartItem";
 
 const Cart = ({ productCount, removeItemFromCart, setCartOpen }) => {
   const elementRef = useRef(null);
+  const trashIconRef = useRef(null);
 
   // useEffect to add event listener when the component mounts
   useEffect(() => {
     function handleClickOutside(event) {
+      if (event.target.id == "trashIcon") {
+        return;
+      }
       if (elementRef.current && !elementRef.current.contains(event.target)) {
         setCartOpen(false);
       }
