@@ -1,7 +1,7 @@
 import styles from "./cartItem.module.css";
 import Image from "next/image";
 
-const CartItem = () => {
+const CartItem = ({ productCount, removeItemFromCart }) => {
   return (
     <div className={styles.cartItemContainer}>
       <Image
@@ -14,8 +14,10 @@ const CartItem = () => {
       <div className={styles.productDetailsContainer}>
         <div>Fall Limited Edition Sneakers</div>
         <div>
-          <span className={styles.priceDetails}>$125.00 x 3</span>
-          <span className={styles.priceTotal}>$375.00</span>
+          <span className={styles.priceDetails}>$125.00 x {productCount}</span>
+          <span className={styles.priceTotal}>{`$${
+            125 * productCount
+          }.00`}</span>
         </div>
       </div>
       <Image
@@ -24,6 +26,7 @@ const CartItem = () => {
         width={16}
         height={16}
         className={styles.trashIcon}
+        onClick={removeItemFromCart}
       />
     </div>
   );

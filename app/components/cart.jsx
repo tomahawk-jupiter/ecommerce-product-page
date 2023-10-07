@@ -2,21 +2,22 @@ import styles from "./cart.module.css";
 import { useState } from "react";
 import CartItem from "./cartItem";
 
-const Cart = () => {
-  const [cartEmpty, setCartEmpty] = useState(false);
-
+const Cart = ({ productCount, removeItemFromCart }) => {
   return (
     <div className={styles.cartContainer}>
       <div className={styles.cartHeader}>
         <div>Cart</div>
       </div>
-      {cartEmpty ? (
+      {productCount < 1 ? (
         <div className={styles.cartBodyEmpty}>
           <div className={styles.cartBodyInner}>Your cart is empty.</div>
         </div>
       ) : (
         <div className={styles.cartBodyNotEmpty}>
-          <CartItem />
+          <CartItem
+            productCount={productCount}
+            removeItemFromCart={removeItemFromCart}
+          />
           <button className={styles.checkoutButton}>Checkout</button>
         </div>
       )}

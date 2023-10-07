@@ -1,11 +1,11 @@
-"use client"; // make this a client component instead of the default server component
+// "use client";
 import Image from "next/image";
 import styles from "./navbar.module.css";
 import { useState } from "react";
 import Menu from "./menu";
 import Cart from "./cart";
 
-const Navbar = () => {
+const Navbar = ({ productCount, removeItemFromCart }) => {
   const [menuOpen, setMenuOpen] = useState(false);
   const [cartOpen, setCartOpen] = useState(false);
 
@@ -14,7 +14,12 @@ const Navbar = () => {
       <nav className={styles.navbar}>
         {menuOpen && <Menu setMenuOpen={setMenuOpen} />}
 
-        {cartOpen && <Cart />}
+        {cartOpen && (
+          <Cart
+            productCount={productCount}
+            removeItemFromCart={removeItemFromCart}
+          />
+        )}
 
         <div className={styles.navbarLeft}>
           <Image
