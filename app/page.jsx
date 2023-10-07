@@ -94,7 +94,7 @@ export default function Home() {
             <button className={styles.addToCartButton}>
               <Image
                 src="/images/icon-cart-light.svg"
-                alt="shopping cart"
+                alt="Add to shopping cart"
                 width={16}
                 height={16}
               />

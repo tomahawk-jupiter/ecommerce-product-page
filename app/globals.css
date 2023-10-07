@@ -56,3 +56,12 @@ p {
   font-weight: 700;
   padding-bottom: 2rem;
 }
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}

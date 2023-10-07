@@ -5,6 +5,8 @@ I think I'll use NextJS. I'm using the newer App router instead of the Pages rou
 ## Contents
 
 - [Google fonts with nextjs](#google-fonts-with-nextjs)
+- [Change opacity without effecting the border color](#change-opacity-without-effecting-the-border-color)
+- [Client component](#client-component)
 
 ## Google fonts with nextjs
 
@@ -25,44 +27,10 @@ export default function RootLayout({ children }) {
 }
 ```
 
-## Responsive navbar
+## Change opacity without effecting the border color
 
-This took a little while to figure out.
+You have to put the image in a div and put the border on that div. If using border radius, add to both the img and div and make the div radius a bit curvier.
 
-## Change opacity of an image without effecting the border color
+## Client component
 
-ChatGPT solution:
-
-```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <style>
-      /* Set initial styles for the image */
-      .image-container {
-        position: relative;
-        display: inline-block;
-      }
-
-      .image-container img {
-        max-width: 100%;
-        height: auto;
-        transition: opacity 0.3s ease-in-out; /* Add a smooth transition for opacity change */
-      }
-
-      .image-container:hover img {
-        opacity: 0.7; /* Change the opacity on hover */
-      }
-
-      .image-container:hover {
-        border: 2px solid #ff0000; /* Add a border on hover */
-      }
-    </style>
-  </head>
-  <body>
-    <div class="image-container">
-      <img src="your-image.jpg" alt="Your Image" />
-    </div>
-  </body>
-</html>
-```
+Add `"use client";` to the top of the component to make `useState` work. Components are server components by default and so are sent as pure html (ie. without javascript). [Stackoverflow answer](https://stackoverflow.com/a/74965850).

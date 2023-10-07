@@ -29,18 +29,12 @@
   margin-left: var(--margin-gap);
 }
 
-.navList {
-  list-style: none;
-  padding: 0;
-}
-
 .navList li {
   display: inline;
   margin-right: 3rem;
 }
 
 .navList li a {
-  text-decoration: none;
   color: var(--gray-blue);
   padding-bottom: calc(var(--navbar-padding) + 10px);
   font-weight: 700;
@@ -60,6 +54,7 @@
   }
   .hamburger {
     display: block;
+    cursor: pointer;
   }
 }
 

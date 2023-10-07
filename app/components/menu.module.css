@@ -1,0 +1,27 @@
+.overlay {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  background-color: #000b;
+}
+
+.menuContainer {
+  width: 70vw;
+  height: 100vh;
+  background-color: var(--white);
+  padding: 2rem;
+}
+
+.menuContainer ul {
+  margin-top: 3rem;
+}
+
+.menuContainer li {
+  margin: 1rem 0;
+}
+
+.menuContainer a {
+  color: var(--dark-blue);
+  font-weight: 700;
+}
