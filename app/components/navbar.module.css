@@ -49,10 +49,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-}
-.cartIcon {
   cursor: pointer;
 }
+/* .cartIcon {
+  cursor: pointer;
+} */
 .countBadge {
   position: absolute;
   top: 4px;

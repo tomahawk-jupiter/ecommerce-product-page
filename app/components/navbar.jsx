@@ -60,14 +60,16 @@ const Navbar = ({ productCount, removeItemFromCart }) => {
           </div>
         </div>
         <div className={styles.navbarRight}>
-          <div className={styles.cartAndBadgeContainer}>
+          <div
+            className={styles.cartAndBadgeContainer}
+            onClick={() => setCartOpen(!cartOpen)}
+          >
             <Image
               src="/images/icon-cart.svg"
               alt="Open shopping cart"
               width={28}
               height={28}
               className={styles.cartIcon}
-              onClick={() => setCartOpen(!cartOpen)}
             />
             <div className={styles.countBadge}>{productCount}</div>
           </div>
