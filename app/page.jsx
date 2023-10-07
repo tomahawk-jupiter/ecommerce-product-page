@@ -50,6 +50,22 @@ export default function Home() {
     setProductCount(0);
   };
 
+  const handleNextImageNumber = () => {
+    if (activeImageNumber >= 4) {
+      setActiveImageNumber(1);
+      return;
+    }
+    setActiveImageNumber(activeImageNumber + 1);
+  };
+
+  const handlePreviousImageNumber = () => {
+    if (activeImageNumber <= 1) {
+      setActiveImageNumber(4);
+      return;
+    }
+    setActiveImageNumber(activeImageNumber - 1);
+  };
+
   return (
     <>
       <Navbar
@@ -65,6 +81,32 @@ export default function Home() {
             height={500}
             className={styles.productImage}
           />
+
+          <div className={styles.imageControlFabContainer}>
+            <button
+              className={styles.imageControlFab}
+              onClick={handlePreviousImageNumber}
+            >
+              <Image
+                src="/images/icon-previous.svg"
+                alt="previous image"
+                width={12}
+                height={18}
+              />
+            </button>
+
+            <button
+              className={styles.imageControlFab}
+              onClick={handleNextImageNumber}
+            >
+              <Image
+                src="/images/icon-next.svg"
+                alt="next image"
+                width={12}
+                height={18}
+              />
+            </button>
+          </div>
 
           <div className={styles.smallImagesRow}>
             <SmallImageTile
