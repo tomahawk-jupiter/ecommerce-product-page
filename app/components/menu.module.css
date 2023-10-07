@@ -24,4 +24,5 @@
 .menuContainer a {
   color: var(--dark-blue);
   font-weight: 700;
+  padding: 1rem 0;
 }

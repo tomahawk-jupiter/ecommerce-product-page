@@ -4,16 +4,35 @@ import styles from "./page.module.css";
 import Navbar from "./components/navbar";
 import { useState } from "react";
 
-const product = {
-  img: "image-product-1-thumbnail.jpg",
-  description: "Fall Limited Edition Sneakers",
-  price: "$125.00",
-  quantity: 0,
+const SmallImageTile = ({
+  imageNumber,
+  activeImageNumber,
+  setActiveImageNumber,
+}) => {
+  return (
+    <div
+      className={`${styles.imageContainer} ${
+        imageNumber == activeImageNumber ? styles.activeImageContainer : ""
+      }`}
+      onClick={() => setActiveImageNumber(imageNumber)}
+    >
+      <Image
+        src={`/images/image-product-${imageNumber}-thumbnail.jpg`}
+        alt="product image"
+        width={100}
+        height={100}
+        className={`${styles.productImage} ${
+          imageNumber == activeImageNumber ? styles.activeImage : ""
+        }`}
+      />
+    </div>
+  );
 };
 
 export default function Home() {
   const [quantityCount, setQuantityCount] = useState(0);
   const [productCount, setProductCount] = useState(0);
+  const [activeImageNumber, setActiveImageNumber] = useState(1);
 
   const decrementCount = () => {
     if (quantityCount < 1) {
@@ -40,7 +59,7 @@ export default function Home() {
       <main className={styles.pageContainer}>
         <div className={styles.pageColumn}>
           <Image
-            src="/images/image-product-1.jpg"
+            src={`/images/image-product-${activeImageNumber}.jpg`}
             alt="product image"
             width={500}
             height={500}
@@ -48,44 +67,29 @@ export default function Home() {
           />
 
           <div className={styles.smallImagesRow}>
-            <div
-              className={`${styles.imageContainer} ${styles.activeImageContainer}`}
-            >
-              <Image
-                src="/images/image-product-1-thumbnail.jpg"
-                alt="product image"
-                width={100}
-                height={100}
-                className={`${styles.productImage} ${styles.activeImage}`}
-              />
-            </div>
-            <div className={styles.imageContainer}>
-              <Image
-                src="/images/image-product-2-thumbnail.jpg"
-                alt="product image"
-                width={100}
-                height={100}
-                className={styles.productImage}
-              />
-            </div>
-            <div className={styles.imageContainer}>
-              <Image
-                src="/images/image-product-3-thumbnail.jpg"
-                alt="product image"
-                width={100}
-                height={100}
-                className={styles.productImage}
-              />
-            </div>
-            <div className={styles.imageContainer}>
-              <Image
-                src="/images/image-product-4-thumbnail.jpg"
-                alt="product image"
-                width={100}
-                height={100}
-                className={styles.productImage}
-              />
-            </div>
+            <SmallImageTile
+              imageNumber={1}
+              activeImageNumber={activeImageNumber}
+              setActiveImageNumber={setActiveImageNumber}
+            />
+
+            <SmallImageTile
+              imageNumber={2}
+              activeImageNumber={activeImageNumber}
+              setActiveImageNumber={setActiveImageNumber}
+            />
+
+            <SmallImageTile
+              imageNumber={3}
+              activeImageNumber={activeImageNumber}
+              setActiveImageNumber={setActiveImageNumber}
+            />
+
+            <SmallImageTile
+              imageNumber={4}
+              activeImageNumber={activeImageNumber}
+              setActiveImageNumber={setActiveImageNumber}
+            />
           </div>
         </div>
 
