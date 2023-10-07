@@ -3,36 +3,38 @@ import Image from "next/image";
 import styles from "./page.module.css";
 import Navbar from "./components/navbar";
 import { useState } from "react";
+import ImageArea from "./components/imageArea";
 
-const SmallImageTile = ({
-  imageNumber,
-  activeImageNumber,
-  setActiveImageNumber,
-}) => {
-  return (
-    <div
-      className={`${styles.imageContainer} ${
-        imageNumber == activeImageNumber ? styles.activeImageContainer : ""
-      }`}
-      onClick={() => setActiveImageNumber(imageNumber)}
-    >
-      <Image
-        src={`/images/image-product-${imageNumber}-thumbnail.jpg`}
-        alt="product image"
-        width={100}
-        height={100}
-        className={`${styles.productImage} ${
-          imageNumber == activeImageNumber ? styles.activeImage : ""
-        }`}
-      />
-    </div>
-  );
-};
+// const SmallImageTile = ({
+//   imageNumber,
+//   activeImageNumber,
+//   setActiveImageNumber,
+// }) => {
+//   return (
+//     <div
+//       className={`${styles.imageContainer} ${
+//         imageNumber == activeImageNumber ? styles.activeImageContainer : ""
+//       }`}
+//       onClick={() => setActiveImageNumber(imageNumber)}
+//     >
+//       <Image
+//         src={`/images/image-product-${imageNumber}-thumbnail.jpg`}
+//         alt="product image"
+//         width={100}
+//         height={100}
+//         className={`${styles.productImage} ${
+//           imageNumber == activeImageNumber ? styles.activeImage : ""
+//         }`}
+//       />
+//     </div>
+//   );
+// };
 
 export default function Home() {
   const [quantityCount, setQuantityCount] = useState(0);
   const [productCount, setProductCount] = useState(0);
   const [activeImageNumber, setActiveImageNumber] = useState(1);
+  const [showCarousel, setShowCarousel] = useState(false);
 
   const decrementCount = () => {
     if (quantityCount < 1) {
@@ -74,7 +76,65 @@ export default function Home() {
       />
       <main className={styles.pageContainer}>
         <div className={styles.pageColumn}>
-          <Image
+          <ImageArea
+            activeImageNumber={activeImageNumber}
+            setActiveImageNumber={setActiveImageNumber}
+            handlePreviousImageNumber={handlePreviousImageNumber}
+            handleNextImageNumber={handleNextImageNumber}
+            setShowCarousel={setShowCarousel}
+          />
+          {showCarousel && (
+            <div className={styles.carouselOverlay}>
+              <div className={styles.carouselInner}>
+                <div className={styles.closeCarouselContainer}>
+                  <Image
+                    src="/images/icon-close.svg"
+                    alt="Close menu icon"
+                    width={24}
+                    height={24}
+                    className={styles.carouselClose}
+                    onClick={() => setShowCarousel(false)}
+                  />
+                </div>
+                <ImageArea
+                  activeImageNumber={activeImageNumber}
+                  setActiveImageNumber={setActiveImageNumber}
+                  handlePreviousImageNumber={handlePreviousImageNumber}
+                  handleNextImageNumber={handleNextImageNumber}
+                />
+
+                <div className={styles.imageControlFabContainerForOverlay}>
+                  <button
+                    className={styles.imageControlFab}
+                    onClick={handlePreviousImageNumber}
+                  >
+                    <Image
+                      src="/images/icon-previous.svg"
+                      alt="previous image"
+                      width={12}
+                      height={18}
+                    />
+                  </button>
+
+                  <button
+                    className={styles.imageControlFab}
+                    onClick={handleNextImageNumber}
+                  >
+                    <Image
+                      src="/images/icon-next.svg"
+                      alt="next image"
+                      width={12}
+                      height={18}
+                    />
+                  </button>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* TODO: trying to move this into a component so I can reuse for carousel */}
+
+          {/* <Image
             src={`/images/image-product-${activeImageNumber}.jpg`}
             alt="product image"
             width={500}
@@ -132,7 +192,7 @@ export default function Home() {
               activeImageNumber={activeImageNumber}
               setActiveImageNumber={setActiveImageNumber}
             />
-          </div>
+          </div> */}
         </div>
 
         <div className={styles.pageColumn}>

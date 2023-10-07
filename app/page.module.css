@@ -12,6 +12,52 @@
   /* position: relative; */
 }
 
+/****** Carousel ******/
+.carouselOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: #000c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.carouselInner {
+  max-width: 550px;
+
+  position: relative;
+}
+.closeCarouselContainer {
+  display: flex;
+  justify-content: end;
+  padding: 1rem;
+  padding-right: 0;
+}
+.carouselClose {
+  cursor: pointer;
+}
+
+.carouselClose:hover {
+  stroke: var(--orange);
+  fill: var(--orange);
+}
+.carouselInner .smallImagesRow {
+  padding: 0 4rem;
+}
+
+.imageControlFabContainerForOverlay {
+  /* width: 100vw; */
+  width: 110%;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  /* padding: 1rem; */
+  top: 40%;
+  left: -5%;
+}
+
 /****** Image area ******/
 
 .imageContainer {
@@ -40,6 +86,7 @@
   width: 100%;
   height: auto;
   border-radius: var(--border-radius);
+  cursor: pointer;
 }
 .activeImage {
   opacity: 0.5;
@@ -53,7 +100,8 @@
 }
 
 .smallImagesRow img {
-  height: 100%;
+  /* height: 100%; */
+  /* width: auto; */
   cursor: pointer;
 }
 

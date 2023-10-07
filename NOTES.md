@@ -1,6 +1,6 @@
 # My Notes
 
-I think I'll use NextJS. I'm using the newer App router instead of the Pages router.
+It took two long sessions to complete this frontend mentor challenge.
 
 Components:
 
@@ -52,3 +52,7 @@ I couldn't seem to change the color using CSS so I changed the SVG file directly
 ## Click outside cart to close
 
 See the `cart.jsx` component for an example of click outside to close. Got the code from chatGPT.
+
+## Becoming a mess!
+
+The way I've implemented the image carousel is becoming quite a mess. It could do with refactoring!
