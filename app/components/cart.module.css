@@ -5,6 +5,7 @@
   background-color: var(--white);
   box-shadow: 0px 16px 32px #0005;
   border-radius: var(--border-radius);
+  z-index: 1;
 }
 
 .cartHeader {
