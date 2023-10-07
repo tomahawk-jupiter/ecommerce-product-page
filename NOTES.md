@@ -14,7 +14,8 @@ Components:
 - [Google fonts with nextjs](#google-fonts-with-nextjs)
 - [Change opacity without effecting the border color](#change-opacity-without-effecting-the-border-color)
 - [Client component](#client-component)
-- []()
+- [Change color of SVG](#change-color-of-svg)
+- [Problems](#problems)
 
 ## Google fonts with nextjs
 
@@ -42,6 +43,10 @@ You have to put the image in a div and put the border on that div. If using bord
 ## Client component
 
 Add `"use client";` to the top of the component to make `useState` work. Components are server components by default and so are sent as pure html (ie. without javascript). [Stackoverflow answer](https://stackoverflow.com/a/74965850).
+
+## Change color of SVG
+
+I couldn't seem to change the color using CSS so I changed the SVG file directly. This means copying the file to have multiple colors.
 
 ## Problems
 

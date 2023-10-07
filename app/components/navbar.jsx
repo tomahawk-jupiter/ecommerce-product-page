@@ -63,8 +63,8 @@ const Navbar = ({ productCount, removeItemFromCart }) => {
             <Image
               src="/images/icon-cart.svg"
               alt="Open shopping cart"
-              width={24}
-              height={24}
+              width={28}
+              height={28}
               className={styles.cartIcon}
               onClick={() => setCartOpen(!cartOpen)}
             />
