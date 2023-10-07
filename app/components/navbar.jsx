@@ -59,14 +59,17 @@ const Navbar = ({ productCount, removeItemFromCart }) => {
           </div>
         </div>
         <div className={styles.navbarRight}>
-          <Image
-            src="/images/icon-cart.svg"
-            alt="Open shopping cart"
-            width={24}
-            height={24}
-            className={styles.cartIcon}
-            onClick={() => setCartOpen(!cartOpen)}
-          />
+          <div className={styles.cartAndBadgeContainer}>
+            <Image
+              src="/images/icon-cart.svg"
+              alt="Open shopping cart"
+              width={24}
+              height={24}
+              className={styles.cartIcon}
+              onClick={() => setCartOpen(!cartOpen)}
+            />
+            <div className={styles.countBadge}>{productCount}</div>
+          </div>
 
           <Image
             src="/images/image-avatar.png"
